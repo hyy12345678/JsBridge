@@ -1,10 +1,12 @@
 package com.github.lzyzsd.jsbridge;
 
 import android.graphics.Bitmap;
-import android.net.http.SslError;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+
+
+import com.tencent.smtt.export.external.interfaces.SslError;
+import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
+import com.tencent.smtt.sdk.WebView;
+import com.tencent.smtt.sdk.WebViewClient;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -69,9 +71,14 @@ public class BridgeWebViewClient extends WebViewClient {
         webView.pageReceivedErrorInvoke(view, errorCode, description, failingUrl);
     }
 
+//    @Override
+//    public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+////        super.onReceivedSslError(view, handler, error);
+//        webView.pageReceivedSslError(view, handler, error);
+//    }
+
     @Override
-    public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
-//        super.onReceivedSslError(view, handler, error);
-        webView.pageReceivedSslError(view, handler, error);
+    public void onReceivedSslError(WebView view, SslErrorHandler sslErrorHandler,SslError sslError) {
+        webView.pageReceivedSslError(view, sslErrorHandler, sslError);
     }
 }

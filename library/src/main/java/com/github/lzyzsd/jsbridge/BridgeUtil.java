@@ -2,7 +2,9 @@ package com.github.lzyzsd.jsbridge;
 
 import android.content.Context;
 import android.util.Base64;
-import android.webkit.WebView;
+
+
+import com.tencent.smtt.sdk.WebView;
 
 import java.io.BufferedReader;
 import java.io.IOException;

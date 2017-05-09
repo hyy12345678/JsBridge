@@ -3,16 +3,17 @@ package com.github.lzyzsd.jsbridge;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.net.http.SslError;
 import android.os.Build;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebView;
+
 
 import com.github.lzyzsd.jsbridge.interfaces.OnPageCallBack;
+import com.tencent.smtt.export.external.interfaces.SslError;
+import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
+import com.tencent.smtt.sdk.WebView;
 
 import java.util.ArrayList;
 import java.util.HashMap;

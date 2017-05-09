@@ -1,9 +1,12 @@
 package com.github.lzyzsd.jsbridge.interfaces;
 
 import android.graphics.Bitmap;
-import android.net.http.SslError;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebView;
+
+
+import com.tencent.smtt.export.external.interfaces.SslError;
+import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
+import com.tencent.smtt.sdk.WebView;
+
 
 /**
  * Created by hyy on 2017/3/18.
