@@ -35,10 +35,13 @@ public class BridgeWebViewClient extends WebViewClient {
         } else if (url.startsWith(BridgeUtil.YY_OVERRIDE_SCHEMA)) { //
             webView.flushMessageQueue();
             return true;
+        } else if (onCustomShouldOverrideUrlLoading(url)) {
+            return true;
         } else {
             return super.shouldOverrideUrlLoading(view, url);
         }
     }
+
 
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -78,7 +81,11 @@ public class BridgeWebViewClient extends WebViewClient {
 //    }
 
     @Override
-    public void onReceivedSslError(WebView view, SslErrorHandler sslErrorHandler,SslError sslError) {
+    public void onReceivedSslError(WebView view, SslErrorHandler sslErrorHandler, SslError sslError) {
         webView.pageReceivedSslError(view, sslErrorHandler, sslError);
+    }
+
+    private boolean onCustomShouldOverrideUrlLoading(String url) {
+        return false;
     }
 }
