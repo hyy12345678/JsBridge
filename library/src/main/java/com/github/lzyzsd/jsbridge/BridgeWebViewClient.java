@@ -85,7 +85,7 @@ public class BridgeWebViewClient extends WebViewClient {
         webView.pageReceivedSslError(view, sslErrorHandler, sslError);
     }
 
-    private boolean onCustomShouldOverrideUrlLoading(String url) {
+    protected boolean onCustomShouldOverrideUrlLoading(String url) {
         return false;
     }
 }
